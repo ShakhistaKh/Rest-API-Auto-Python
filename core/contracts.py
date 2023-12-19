@@ -9,3 +9,12 @@ USER_DATA_SCHEMA = {
     },
     "required": ["id", "email", "first_name", "last_name", "avatar"]
 }
+
+
+USER_SUPPORT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "url": {"type": "string"},
+        "text": {"type": "string"}
+    }
+}
