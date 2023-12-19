@@ -36,3 +36,14 @@ def test_support_users():
     with allure.step('Выполняем GET запрос'):
         response = httpx.get(BASE_URL + '/2')
     single_support_data = response.json()['support']
+
+
+@allure.suite('Проверка запросов с данными пользователей')
+@allure.title('Метод проверящий ненайденных пользователей')
+def test_not_found_user():
+    with allure.step('Выполняем GET запрос'):
+        response = httpx.get(BASE_URL + '/23')
+
+    with allure.step('Проверяем код ответа'):
+        assert response.status_code == 404
+
